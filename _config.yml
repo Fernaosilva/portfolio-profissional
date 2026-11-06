@@ -1,0 +1,7 @@
+# Fontes preservados no projeto, mas ausentes da saída pública do GitHub Pages.
+# Lista simples de nomes na raiz; usada também por scripts/build-site.ps1.
+exclude:
+  - lab
+  - scripts
+  - dist
+  - README.md

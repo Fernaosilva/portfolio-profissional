@@ -1,0 +1,28 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Configurações locais de editores
+.vscode/
+.idea/
+*.code-workspace
+*.swp
+*~
+
+# Arquivos temporários e registros
+*.log
+*.tmp
+__pycache__/
+
+# Segredos e configurações locais
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Saida de publicacao e caches locais
+/dist/
+/_site/
+/.jekyll-cache/

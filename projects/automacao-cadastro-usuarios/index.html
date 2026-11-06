@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Estudo de caso de automação de cadastro de usuários no TOTVS Protheus WebApp com Python e Playwright: decisão técnica, resultados e aprendizados.">
+  <meta name="theme-color" content="#0b1220">
+  <title>Automação de Cadastro de Usuários | Fernando Silva</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script src="../../assets/js/main.js" defer></script>
+</head>
+<body data-title-key="userAutomation.pageTitle">
+  <a class="skip-link" href="#main" data-i18n="common.skip">Ir para o conteúdo</a>
+  <header class="site-header">
+    <a class="brand" href="../../index.html" data-language-link><span class="brand-mark" aria-hidden="true">FS<span>.</span></span><span>Fernando Silva</span></a>
+    <nav aria-label="Navegação principal" data-i18n-aria="common.navigation">
+      <ul>
+        <li><a href="../../index.html" data-language-link data-i18n="common.home">Início</a></li>
+        <li><a href="../index.html" aria-current="location" data-language-link data-i18n="common.projects">Projetos</a></li>
+        <li><a href="../../contact/index.html" data-language-link data-i18n="common.contact">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="language-switch" role="group" aria-label="Idioma" data-i18n-aria="common.language" hidden>
+      <button type="button" data-language="pt-BR" aria-pressed="true" lang="pt-BR" aria-label="Português" data-i18n-aria="common.portuguese">PT</button>
+      <button type="button" data-language="en" aria-pressed="false" lang="en" aria-label="Inglês" data-i18n-aria="common.english">EN</button>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <nav class="case-breadcrumb" aria-label="Caminho da página" data-i18n-aria="userAutomation.breadcrumb">
+      <ol>
+        <li><a href="../../index.html" data-language-link data-i18n="common.home">Início</a></li>
+        <li><a href="../index.html" data-language-link data-i18n="common.projects">Projetos</a></li>
+        <li><span aria-current="page" data-i18n="userAutomation.caseLabel">Estudo de caso</span></li>
+      </ol>
+    </nav>
+    <article class="case-study">
+      <header class="case-hero">
+        <p class="eyebrow"><span data-i18n="userAutomation.category">Python &amp; Automação</span><span aria-hidden="true"> · </span><span>2026</span></p>
+        <h1 data-i18n="userAutomation.title">Automação de Cadastro de Usuários</h1>
+        <p class="hero-intro" data-i18n="userAutomation.description">Automação desenvolvida em Python e Playwright para realizar o cadastro de aproximadamente 140 usuários no TOTVS Protheus, atendendo à integração operacional de seis novas unidades.</p>
+        <ul class="skill-tags"><li>Python</li><li>Playwright</li><li>CSV</li><li>TOTVS Protheus WebApp</li></ul>
+      </header>
+      <section class="case-section" aria-labelledby="overview">
+        <h2 id="overview" data-i18n="userAutomation.overviewHeading">Visão geral</h2>
+        <div class="case-copy">
+          <p data-i18n="userAutomation.overview1">Durante um processo de integração de seis novas unidades, surgiu a necessidade de cadastrar aproximadamente 140 usuários no ERP TOTVS Protheus dentro de um prazo reduzido.</p>
+          <p data-i18n="userAutomation.overview2">Para atender à demanda, foi desenvolvida uma automação utilizando Python e Playwright, executando as operações de cadastro por meio da interface do Protheus WebApp.</p>
+          <p data-i18n="userAutomation.overview3">A abordagem permitiu utilizar funcionalidades já disponíveis no ERP e reduzir a necessidade de execução repetitiva das operações de cadastro.</p>
+        </div>
+      </section>
+      <section class="case-section" aria-labelledby="challenge">
+        <h2 id="challenge" data-i18n="userAutomation.challengeHeading">O desafio</h2>
+        <div class="case-copy">
+          <p data-i18n="userAutomation.challenge1">O volume de usuários e o prazo disponível tornavam o cadastramento manual uma atividade operacionalmente onerosa.</p>
+          <p data-i18n="userAutomation.challenge2">Além disso, a interface do Protheus WebApp apresentava comportamentos específicos, incluindo elementos dinâmicos, campos que exigiam interações particulares e janelas cuja exibição dependia da sequência correta de ações.</p>
+          <p data-i18n="userAutomation.challenge3">A automação também precisava utilizar informações provenientes de um arquivo CSV preparado por terceiros, tornando a qualidade dos dados de entrada uma dependência importante.</p>
+        </div>
+      </section>
+      <section class="case-section" aria-labelledby="solution">
+        <h2 id="solution" data-i18n="userAutomation.solutionHeading">A solução técnica</h2>
+        <div class="case-copy">
+          <p data-i18n="userAutomation.solution1">Foi desenvolvida uma automação em Python utilizando Playwright para interagir com a interface do TOTVS Protheus WebApp.</p>
+          <p data-i18n="userAutomation.solution2">A solução utilizava um arquivo CSV como fonte dos registros e executava as operações de cadastro por meio das funcionalidades existentes no ERP, incluindo a utilização de usuários-modelo como referência para os novos cadastros.</p>
+          <p data-i18n="userAutomation.solution3">Durante o desenvolvimento, foi necessário tratar particularidades da interface, como elementos ocultos no DOM, campos que exigiam duplo clique e janelas dependentes de interações específicas.</p>
+          <p data-i18n="userAutomation.solution4">A abordagem escolhida priorizou a viabilidade de implementação dentro do prazo disponível.</p>
+        </div>
+      </section>
+      <section class="section" aria-labelledby="decision-heading">
+        <div class="section-heading">
+          <h2 id="decision-heading" data-i18n="userAutomation.decisionHeading">Decisão técnica — Automação de interface</h2>
+          <p class="muted" data-i18n="userAutomation.decisionContext">A decisão considerou o prazo disponível e os requisitos da demanda.</p>
+        </div>
+        <ul class="flow-outcomes" role="list">
+          <li>
+            <h3 data-i18n="userAutomation.decisionUsed">Abordagem utilizada: Python + Playwright</h3>
+            <p data-i18n="userAutomation.decisionUsedText">Permitiu automatizar o cadastro utilizando o fluxo já existente no sistema, sem depender da implementação prévia de uma nova integração.</p>
+          </li>
+          <li>
+            <h3 data-i18n="userAutomation.decisionAlternative">Alternativa considerada: integração via API</h3>
+            <p data-i18n="userAutomation.decisionAlternativeText">Uma integração por API poderia oferecer maior robustez para uma solução permanente, mas exigiria desenvolvimento e validações adicionais.</p>
+          </li>
+        </ul>
+      </section>
+      <section class="case-section" aria-labelledby="role">
+        <h2 id="role" data-i18n="userAutomation.roleHeading">Minha atuação no projeto</h2>
+        <div class="case-copy">
+          <p data-i18n="userAutomation.role1">Atuei na análise técnica, definição da abordagem e desenvolvimento da automação em Python e Playwright.</p>
+          <p data-i18n="userAutomation.role2">Minha responsabilidade envolveu compreender o fluxo de cadastro no TOTVS Protheus, identificar os elementos necessários à interação automatizada, tratar comportamentos específicos do WebApp e estruturar a leitura dos dados de entrada.</p>
+          <p data-i18n="userAutomation.role3">Durante a execução, também foram necessários ajustes operacionais para lidar com inconsistências nos registros recebidos, permitindo concluir o cadastramento dos usuários previstos.</p>
+          <p data-i18n="userAutomation.role4">A iniciativa demonstrou minha capacidade de utilizar programação para solucionar uma demanda empresarial crítica, equilibrando prazo, complexidade técnica e necessidades operacionais.</p>
+        </div>
+      </section>
+      <section class="case-section" aria-labelledby="results">
+        <h2 id="results" data-i18n="userAutomation.resultsHeading">Resultados e aprendizados</h2>
+        <div class="case-copy">
+          <p data-i18n="userAutomation.results1">A automação permitiu concluir o cadastramento de aproximadamente 140 usuários no TOTVS Protheus, atendendo à necessidade operacional de integração de seis novas unidades.</p>
+          <p data-i18n="userAutomation.results2">Um dos principais desafios encontrados durante a execução foi a qualidade dos dados de entrada.</p>
+          <p data-i18n="userAutomation.results3">O arquivo CSV, preparado por terceiros com base nas informações cadastrais previamente fornecidas, apresentou situações de duplicidade que exigiram intervenção manual.</p>
+          <p data-i18n="userAutomation.results4">Quando uma duplicidade era identificada, o processamento precisava ser interrompido para correção do arquivo e remoção dos registros já processados, permitindo reiniciar a automação sem repetir os cadastros concluídos.</p>
+          <p data-i18n="userAutomation.results5">Apesar dessas limitações, todos os usuários previstos foram cadastrados.</p>
+          <h3 data-i18n="userAutomation.opportunitiesHeading">Oportunidades de evolução</h3>
+          <p data-i18n="userAutomation.results6">A experiência evidenciou oportunidades de evolução, especialmente na validação preventiva dos dados, identificação de registros duplicados, controle de progresso e retomada segura após interrupções.</p>
+          <p class="estimate-note" data-i18n="userAutomation.opportunitiesNote">Essas melhorias são oportunidades identificadas, não funcionalidades já implementadas.</p>
+        </div>
+      </section>
+      <section class="section case-flow-section" aria-labelledby="workflow-heading">
+        <div class="section-heading">
+          <h2 id="workflow-heading" data-i18n="userAutomation.flowHeading">Fluxograma funcional</h2>
+        </div>
+        <div class="process-flow">
+          <ol class="flow-steps" role="list" aria-label="Etapas da automação de cadastro de usuários" data-i18n-aria="userAutomation.flowLabel">
+            <li data-i18n="userAutomation.flow1">Arquivo CSV com dados dos usuários</li>
+            <li data-i18n="userAutomation.flow2">Automação Python + Playwright</li>
+            <li data-i18n="userAutomation.flow3">Interação com Protheus WebApp</li>
+            <li data-i18n="userAutomation.flow4">Cadastro baseado em usuário-modelo</li>
+          </ol>
+          <div class="flow-arrow" aria-hidden="true">↓</div>
+          <p class="eyebrow flow-decision" data-i18n="userAutomation.flowDecision">Resultado da operação</p>
+          <ul class="flow-outcomes" role="list">
+            <li class="flow-approved">
+              <h3 data-i18n="userAutomation.flowSuccess">Sucesso</h3>
+              <p data-i18n="userAutomation.flowSuccessText">Usuário cadastrado no ERP.</p>
+            </li>
+            <li class="flow-exception">
+              <h3 data-i18n="userAutomation.flowException">Duplicidade ou inconsistência</h3>
+              <p data-i18n="userAutomation.flowExceptionText">Interrupção do processamento, correção manual do CSV, exclusão dos registros já processados da lista e reinício manual da automação.</p>
+            </li>
+          </ul>
+          <p class="muted flow-manual-note" data-i18n="userAutomation.flowNote">O tratamento das duplicidades e a retomada eram manuais.</p>
+        </div>
+      </section>
+      <section class="section" aria-labelledby="metrics-heading">
+        <div class="section-heading">
+          <h2 id="metrics-heading" data-i18n="userAutomation.metricsHeading">Indicadores do projeto</h2>
+          <p class="muted" data-i18n="userAutomation.metricsNote">Resultados efetivamente alcançados no projeto.</p>
+        </div>
+        <dl class="project-estimates">
+          <div>
+            <dt data-i18n="userAutomation.usersLabel">Usuários cadastrados</dt>
+            <dd data-i18n="userAutomation.usersValue">Aproximadamente 140</dd>
+          </div>
+          <div>
+            <dt data-i18n="userAutomation.unitsLabel">Unidades integradas</dt>
+            <dd data-i18n="userAutomation.unitsValue">6</dd>
+          </div>
+        </dl>
+      </section>
+      <section class="case-section" aria-labelledby="demonstrated-skills">
+        <h2 id="demonstrated-skills" data-i18n="userAutomation.skillsHeading">Competências demonstradas</h2>
+        <div class="case-copy">
+          <ul class="case-skills">
+            <li data-i18n="userAutomation.skill1">Desenvolvimento Python.</li>
+            <li data-i18n="userAutomation.skill2">Automação de interfaces com Playwright.</li>
+            <li data-i18n="userAutomation.skill3">Análise técnica de processos ERP.</li>
+            <li data-i18n="userAutomation.skill4">Automação de rotinas administrativas.</li>
+            <li data-i18n="userAutomation.skill5">Manipulação de dados CSV.</li>
+            <li data-i18n="userAutomation.skill6">Identificação e resolução de problemas.</li>
+            <li data-i18n="userAutomation.skill7">Tomada de decisão técnica sob restrição de prazo.</li>
+          </ul>
+        </div>
+      </section>
+      <div class="case-bottom">
+        <div class="actions">
+          <a class="text-link" href="../index.html" data-language-link data-i18n="userAutomation.back">Voltar aos projetos</a>
+          <a class="text-link text-link-secondary" href="https://www.linkedin.com/posts/silvafernando_cumprindo-prazos-atrav%C3%A9s-de-automa%C3%A7%C3%A3o-python-activity-7458950634046640128-R9Be" target="_blank" rel="noopener noreferrer" data-i18n="userAutomation.articleLink" aria-label="Leia o artigo original no LinkedIn (abre em nova aba)." data-i18n-aria="userAutomation.articleAria">Leia o artigo original no LinkedIn.</a>
+        </div>
+      </div>
+    </article>
+    <p class="status" role="status" data-i18n-status></p>
+  </main>
+  <footer class="site-footer">
+    <p data-i18n="common.footer">Fernando Silva · Sistemas, implantação e desenvolvimento.</p>
+    <p class="footer-signature" data-i18n="common.signature">ERP TOTVS Protheus · ADVPL / TLPP</p>
+  </footer>
+</body>
+</html>

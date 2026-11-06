@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Estudo de caso de implantação de Git e GitHub para versionamento de fontes ADVPL/TLPP do TOTVS Protheus, com práticas documentadas e uso em desenvolvimento e manutenção.">
+  <meta name="theme-color" content="#0b1220">
+  <title>Padronização do Versionamento de Fontes Protheus | Fernando Silva</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <script src="../../assets/js/main.js" defer></script>
+</head>
+<body data-title-key="versionControl.pageTitle">
+  <a class="skip-link" href="#main" data-i18n="common.skip">Ir para o conteúdo</a>
+  <header class="site-header">
+    <a class="brand" href="../../index.html" data-language-link><span class="brand-mark" aria-hidden="true">FS<span>.</span></span><span>Fernando Silva</span></a>
+    <nav aria-label="Navegação principal" data-i18n-aria="common.navigation">
+      <ul>
+        <li><a href="../../index.html" data-language-link data-i18n="common.home">Início</a></li>
+        <li><a href="../index.html" aria-current="location" data-language-link data-i18n="common.projects">Projetos</a></li>
+        <li><a href="../../contact/index.html" data-language-link data-i18n="common.contact">Contato</a></li>
+      </ul>
+    </nav>
+    <div class="language-switch" role="group" aria-label="Idioma" data-i18n-aria="common.language" hidden>
+      <button type="button" data-language="pt-BR" aria-pressed="true" lang="pt-BR" aria-label="Português" data-i18n-aria="common.portuguese">PT</button>
+      <button type="button" data-language="en" aria-pressed="false" lang="en" aria-label="Inglês" data-i18n-aria="common.english">EN</button>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <nav class="case-breadcrumb" aria-label="Caminho da página" data-i18n-aria="versionControl.breadcrumb">
+      <ol>
+        <li><a href="../../index.html" data-language-link data-i18n="common.home">Início</a></li>
+        <li><a href="../index.html" data-language-link data-i18n="common.projects">Projetos</a></li>
+        <li><span aria-current="page" data-i18n="versionControl.caseLabel">Estudo de caso</span></li>
+      </ol>
+    </nav>
+    <article class="case-study">
+      <header class="case-hero">
+        <p class="eyebrow" data-i18n="versionControl.category">Git &amp; Governança</p>
+        <h1 data-i18n="versionControl.title">Padronização do Versionamento de Fontes Protheus</h1>
+        <p class="hero-intro" data-i18n="versionControl.description">Implantação de práticas de controle de versão com Git e GitHub para organizar fontes ADVPL/TLPP, padronizar o desenvolvimento e aumentar a rastreabilidade das alterações.</p>
+        <ul class="skill-tags"><li>Git</li><li>GitHub</li><li>ADVPL/TLPP</li><li data-i18n="versionControl.governance">Governança</li></ul>
+      </header>
+      <section class="case-section" aria-labelledby="overview">
+        <h2 id="overview" data-i18n="versionControl.overviewHeading">Visão geral</h2>
+        <div class="case-copy">
+          <p data-i18n="versionControl.overview1">Projeto de implantação e padronização do controle de versão dos arquivos-fonte ADVPL/TLPP do ERP TOTVS Protheus, utilizando Git e GitHub como ferramentas de organização e rastreabilidade do desenvolvimento.</p>
+          <p data-i18n="versionControl.overview2">A iniciativa buscou evoluir o gerenciamento dos fontes, substituindo a dependência de diretórios e cópias manuais por um repositório versionado, com histórico de alterações e práticas documentadas para utilização.</p>
+        </div>
+      </section>
+      <section class="case-section" aria-labelledby="challenge">
+        <h2 id="challenge" data-i18n="versionControl.challengeHeading">O desafio</h2>
+        <div class="case-copy">
+          <p data-i18n="versionControl.challenge1">O ambiente de desenvolvimento possuía um histórico de customizações e arquivos organizados em diretórios, com separação entre fontes preparados para compilação e arquivos em desenvolvimento.</p>
+          <p data-i18n="versionControl.challenge2">Esse modelo dificultava a rastreabilidade das alterações, a identificação de versões e a organização de atividades simultâneas.</p>
+          <p data-i18n="versionControl.challenge3">Era necessário estabelecer uma estrutura que permitisse centralizar os arquivos-fonte, preservar o histórico de alterações e definir procedimentos consistentes para o trabalho técnico.</p>
+        </div>
+      </section>
+      <section class="case-section" aria-labelledby="solution">
+        <h2 id="solution" data-i18n="versionControl.solutionHeading">A solução técnica</h2>
+        <div class="case-copy">
+          <p data-i18n="versionControl.solution1">Foi implantado um repositório Git/GitHub para gerenciamento dos fontes Protheus, aproveitando o levantamento e a organização realizados anteriormente no projeto de inventário do RPO.</p>
+          <ul class="case-skills">
+            <li data-i18n="versionControl.activity1">Estruturação do repositório de código-fonte.</li>
+            <li data-i18n="versionControl.activity2">Carga inicial dos arquivos ADVPL/TLPP.</li>
+            <li data-i18n="versionControl.activity3">Organização dos arquivos classificados e pendentes de classificação.</li>
+            <li data-i18n="versionControl.activity4">Definição de convenções de nomenclatura para branches.</li>
+            <li data-i18n="versionControl.activity5">Padronização de mensagens de commit.</li>
+            <li data-i18n="versionControl.activity6">Documentação de procedimentos para utilização do Git/GitHub.</li>
+            <li data-i18n="versionControl.activity7">Utilização prática de branches, commits, sincronização e integração de alterações.</li>
+          </ul>
+          <p data-i18n="versionControl.solution2">Foram preparados materiais de orientação, incluindo documentação CONTRIBUTING.md e instruções operacionais para utilização do fluxo.</p>
+          <p data-i18n="versionControl.solution3">O controle de versão passou a ser utilizado em atividades reais de desenvolvimento e manutenção do Protheus.</p>
+        </div>
+      </section>
+      <section class="case-section" aria-labelledby="role">
+        <h2 id="role" data-i18n="versionControl.roleHeading">Minha atuação no projeto</h2>
+        <div class="case-copy">
+          <p data-i18n="versionControl.role1">Atuei na análise da estrutura existente, planejamento e implantação do processo de controle de versão dos fontes Protheus.</p>
+          <p data-i18n="versionControl.role2">Minha participação envolveu a organização inicial do repositório, configuração do ambiente Git/GitHub, estabelecimento de convenções de utilização e preparação de documentação técnica para orientar o trabalho.</p>
+          <p data-i18n="versionControl.role3">Também utilizei o fluxo de versionamento durante atividades reais de desenvolvimento, realizando operações de criação e atualização de branches, commits, sincronização com o repositório remoto e integração de alterações.</p>
+          <p data-i18n="versionControl.role4">A iniciativa demonstrou minha atuação na melhoria de processos técnicos, organização de ativos de software e adoção de práticas de governança do desenvolvimento.</p>
+        </div>
+      </section>
+      <section class="section case-flow-section" aria-labelledby="workflow-heading">
+        <div class="section-heading">
+          <h2 id="workflow-heading" data-i18n="versionControl.flowHeading">Fluxograma funcional</h2>
+          <p class="muted" data-i18n="versionControl.flowNote">Processo de trabalho com Git/GitHub, do inventário dos fontes ao histórico e à rastreabilidade.</p>
+        </div>
+        <div class="process-flow">
+          <ol class="flow-steps" role="list" aria-label="Etapas do processo de controle de versão" data-i18n-aria="versionControl.flowLabel">
+            <li data-i18n="versionControl.flow1">Inventário e organização dos fontes</li>
+            <li data-i18n="versionControl.flow2">Estruturação do repositório Git/GitHub</li>
+            <li data-i18n="versionControl.flow3">Carga inicial dos arquivos</li>
+            <li data-i18n="versionControl.flow4">Criação de branch por atividade</li>
+            <li data-i18n="versionControl.flow5">Desenvolvimento e registro de commits</li>
+            <li data-i18n="versionControl.flow6">Sincronização com o GitHub</li>
+            <li data-i18n="versionControl.flow7">Integração das alterações ao repositório principal</li>
+            <li data-i18n="versionControl.flow8">Histórico e rastreabilidade do desenvolvimento</li>
+          </ol>
+        </div>
+      </section>
+      <section class="section" aria-labelledby="results-heading">
+        <div class="section-heading">
+          <h2 id="results-heading" data-i18n="versionControl.resultsHeading">Resultados alcançados</h2>
+        </div>
+        <div class="case-copy section-heading">
+          <p data-i18n="versionControl.results1">O projeto resultou na implantação de um repositório versionado para os fontes ADVPL/TLPP, com organização estruturada e histórico de alterações.</p>
+          <p data-i18n="versionControl.results2">Foram estabelecidas práticas documentadas para utilização do Git/GitHub, incluindo convenções de commits e procedimentos para trabalho com branches.</p>
+          <p data-i18n="versionControl.results3">O versionamento foi utilizado em atividades reais de desenvolvimento e manutenção do ERP, com registros de commits, sincronização com o repositório remoto e integração de alterações.</p>
+          <p data-i18n="versionControl.results4">A iniciativa ampliou as condições de rastreabilidade, organização e controle do código-fonte, estabelecendo uma base técnica para a evolução das práticas de governança.</p>
+        </div>
+        <ul class="flow-outcomes" role="list" aria-label="Entregas qualitativas do projeto" data-i18n-aria="versionControl.resultsLabel">
+          <li><h3 data-i18n="versionControl.resultRepository">Repositório implantado</h3></li>
+          <li><h3 data-i18n="versionControl.resultWorkflow">Fluxo de versionamento utilizado</h3></li>
+          <li><h3 data-i18n="versionControl.resultDocumentation">Práticas documentadas</h3></li>
+        </ul>
+      </section>
+      <section class="case-section" aria-labelledby="limitations">
+        <h2 id="limitations" data-i18n="versionControl.limitationsHeading">Limitações e oportunidades de evolução</h2>
+        <div class="case-copy">
+          <p data-i18n="versionControl.limitations1">Embora o repositório e as práticas de versionamento tenham sido implantados, não há confirmação de adoção integral do fluxo padronizado por todos os profissionais da equipe.</p>
+          <p data-i18n="versionControl.limitations2">A ampliação da adoção, o aperfeiçoamento das revisões de código e a formalização de critérios de aprovação representam oportunidades de evolução.</p>
+          <p data-i18n="versionControl.limitations3">A apresentação corporativa preparada para o projeto não foi publicada.</p>
+        </div>
+      </section>
+      <section class="case-section" aria-labelledby="demonstrated-skills">
+        <h2 id="demonstrated-skills" data-i18n="versionControl.skillsHeading">Competências demonstradas</h2>
+        <div class="case-copy">
+          <ul class="case-skills">
+            <li data-i18n="versionControl.skill1">Git e GitHub aplicados ao desenvolvimento corporativo.</li>
+            <li data-i18n="versionControl.skill2">Governança de código-fonte.</li>
+            <li data-i18n="versionControl.skill3">Controle de versão de arquivos ADVPL/TLPP.</li>
+            <li data-i18n="versionControl.skill4">Estruturação e organização de repositórios.</li>
+            <li data-i18n="versionControl.skill5">Gerenciamento de branches e integração de alterações.</li>
+            <li data-i18n="versionControl.skill6">Padronização de procedimentos técnicos.</li>
+            <li data-i18n="versionControl.skill7">Documentação de processos de desenvolvimento.</li>
+            <li data-i18n="versionControl.skill8">Organização e manutenção de sistemas legados.</li>
+          </ul>
+        </div>
+      </section>
+      <div class="case-bottom">
+        <aside aria-label="Projeto relacionado" data-i18n-aria="versionControl.relatedLabel">
+          <a class="text-link text-link-secondary" href="../inventario-governanca-fontes-protheus/index.html" data-language-link data-i18n="versionControl.relatedLink">Projeto relacionado: Inventário e Governança de Fontes Protheus.</a>
+        </aside>
+        <div class="actions">
+          <a class="text-link" href="../index.html" data-language-link data-i18n="versionControl.back">Voltar aos projetos</a>
+        </div>
+      </div>
+    </article>
+    <p class="status" role="status" data-i18n-status></p>
+  </main>
+  <footer class="site-footer">
+    <p data-i18n="common.footer">Fernando Silva · Sistemas, implantação e desenvolvimento.</p>
+    <p class="footer-signature" data-i18n="common.signature">ERP TOTVS Protheus · ADVPL / TLPP</p>
+  </footer>
+</body>
+</html>
