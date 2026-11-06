@@ -1,0 +1,93 @@
+name: Deploy portfolio to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: windows-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: read
+    defaults:
+      run:
+        shell: powershell
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Build static site
+        run: |
+          powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\build-site.ps1
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Validate public artifact
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $requiredFiles = @(
+            'index.html',
+            'projects/index.html',
+            'projects/automacao-classificacao-fiscal/index.html',
+            'projects/automacao-cadastro-usuarios/index.html',
+            'projects/sustentacao-estabilizacao-erp/index.html',
+            'projects/inventario-governanca-fontes-protheus/index.html',
+            'projects/padronizacao-versionamento-fontes-protheus/index.html',
+            'contact/index.html',
+            'data/i18n/pt-BR.json',
+            'data/i18n/en.json',
+            'assets/css/main.css',
+            'assets/js/main.js',
+            'assets/documents/fernando-silva-cv-br.pdf',
+            'assets/documents/fernando-silva-cv-eu.pdf',
+            'assets/images/profile/fernando-silva-hero.png',
+            '.nojekyll'
+          )
+          foreach ($file in $requiredFiles) {
+            if (-not (Test-Path -LiteralPath (Join-Path 'dist' $file) -PathType Leaf)) {
+              throw "Missing public file: $file"
+            }
+          }
+          if (Test-Path -LiteralPath 'dist/lab') { throw 'Laboratory must not be published.' }
+          $allowedRoots = @('index.html', 'assets', 'data', 'projects', 'contact', '.nojekyll')
+          foreach ($entry in Get-ChildItem -LiteralPath 'dist' -Force) {
+            if ($entry.Name -notin $allowedRoots) { throw "Unexpected artifact entry: $($entry.Name)" }
+          }
+          Write-Output 'Public artifact validated: pages, translations, CVs and photo present; Laboratory excluded.'
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload public artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./dist
+          retention-days: 1
+
+  deploy:
+    needs: build
+    runs-on: windows-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
