@@ -81,7 +81,6 @@ p { max-width: 66ch; }
 .section-heading > :last-child { margin-bottom: 0; }
 .about-section { display: grid; grid-template-columns: 1fr 2.6fr; gap: 3rem; }
 .section-side .eyebrow { display: flex; align-items: center; gap: 0.75rem; margin-top: 0.5rem; }
-.section-side .eyebrow::before { content: ""; width: 1.5rem; height: 1px; background: var(--accent); }
 .about-copy { max-width: 46rem; }
 .about-copy > p { color: var(--muted); font-size: 1rem; line-height: 1.65; margin-bottom: 1rem; }
 .about-copy > :last-child { margin-bottom: 0; }
